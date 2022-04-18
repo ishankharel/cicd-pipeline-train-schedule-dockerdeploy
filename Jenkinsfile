@@ -13,7 +13,9 @@ pipeline {
                 branch 'master'
             }
             steps {
-                app = docker.build("ishankharel/train-schedule")
+                script {
+                    app = docker.build("ishankharel/train-schedule")
+                }
             }
         }
     }
