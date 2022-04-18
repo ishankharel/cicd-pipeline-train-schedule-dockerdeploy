@@ -12,11 +12,8 @@ pipeline {
             when {
                 branch 'master'
             }
+            steps {
                 app = docker.build("ishankharel/train-schedule")
-        }
-        stage('Test Image') {
-            app.inside {
-               sh 'echo "test passed"'
             }
         }
     }
